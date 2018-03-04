@@ -88,11 +88,13 @@ if not np.isclose(s_exp, s, rtol=1e-08, atol=1e-08).all():
 else:
 	print("s passed")
 
+
 print("\n### computing loss and mean loss")
 loss = r.compute_loss(x,d)
 loss2 = r.compute_loss(x2,d2)
 loss3 = r.compute_loss(x3,d3)
 mean_loss = r.compute_mean_loss([x,x2,x3],[d,d2,d3])
+
 if not np.isclose(loss_expected, loss, rtol=1e-08, atol=1e-08) or not np.isclose(loss2_expected, loss2, rtol=1e-08, atol=1e-08) or not np.isclose(loss3_expected, loss3, rtol=1e-08, atol=1e-08):
 	print("loss expected: {0}".format(loss_expected))
 	print("loss received: {0}".format(loss))
@@ -107,6 +109,7 @@ if not np.isclose(mean_loss_expected, mean_loss, rtol=1e-08, atol=1e-08):
 	print("mean loss received: {0}".format(mean_loss))
 else:
 	print("mean loss passed")
+
 
 
 print("\n### standard BP")
@@ -126,6 +129,7 @@ if not np.isclose(deltaW_1_exp, r.deltaW).all():
 	print("deltaW received\n{0}".format(r.deltaW))
 else:
 	print("deltaW passed")
+
 
 print("\n### BPTT with 3 steps")
 r.deltaU.fill(0)
@@ -149,7 +153,7 @@ if not np.isclose(deltaW_3_exp, r.deltaW).all():
 else:
 	print("deltaW passed")
 
-
+asdfadsf
 # BINARY PREDICTION TEST
 
 
